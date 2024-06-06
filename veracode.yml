@@ -5,15 +5,16 @@ veracode_static_scan:
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
-      - main
-      - master
+      - '*'
+      # - main
+      # - master
     branches_to_exclude:
   pull_request:
     trigger: true
     action:
       - opened
       - synchronize
-    target_branch:
+    target_branch:  # not working
       - '*'      
   # If the analysis_on_platform is set to true,
   # Veracode will save your last scan result, on the default branch, as an application profile with the same name as your scanned repository on the Veracode platform. 
@@ -46,8 +47,9 @@ veracode_sca_scan:
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
-      - 'main'
-      - 'master'
+      - '*'
+      # - main
+      # - master
     branches_to_exclude:
   pull_request:
     trigger: true
@@ -72,8 +74,9 @@ veracode_iac_secrets_scan:
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
     branches_to_run:
-      - 'main'
-      - 'master'
+      - '*'
+      # - main
+      # - master
     branches_to_exclude:
   pull_request:
     trigger: true
